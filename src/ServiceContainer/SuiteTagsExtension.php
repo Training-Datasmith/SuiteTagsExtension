@@ -18,21 +18,9 @@ use Symfony\Component\DependencyInjection\Reference;
 
 final class SuiteTagsExtension implements Extension
 {
-    public function process(ContainerBuilder $container): void
-    {
-    }
-
     public function getConfigKey(): string
     {
         return 'sylius_labs_suite_tags';
-    }
-
-    public function initialize(ExtensionManager $extensionManager): void
-    {
-    }
-
-    public function configure(ArrayNodeDefinition $builder): void
-    {
     }
 
     public function load(ContainerBuilder $container, array $config): void
@@ -43,7 +31,7 @@ final class SuiteTagsExtension implements Extension
         $controllerDefinition = new Definition(FilteredTagsSuiteController::class, [
             new Reference(SuiteExtension::REGISTRY_ID),
         ]);
-        $controllerDefinition->addTag(CliExtension::CONTROLLER_TAG, array('priority' => 1000));
+        $controllerDefinition->addTag(CliExtension::CONTROLLER_TAG, ['priority' => 1000]);
         $container->setDefinition(CliExtension::CONTROLLER_TAG . '.filtered_tags_suite', $controllerDefinition);
     }
 

@@ -53,7 +53,7 @@ final class FilteredTagsSuiteController implements Controller
         foreach ($this->registry->getSuitesConfigurations() as $name => [$type, $config]) {
             if (isset($config['filters']['tags'])) {
                 $suiteTags = array_map(
-                    fn (string $tag) => $this->normalizeTag($tag),
+                    fn (string $tag): string => $this->normalizeTag($tag),
                     explode('&&', $config['filters']['tags']),
                 );
 
