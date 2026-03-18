@@ -87,7 +87,9 @@ final class TestContext implements Context
      */
     public function thereIsFeatureFileWithPassingScenario(): void
     {
-        $this->thereIsFile('features/bootstrap/FeatureContext.php', <<<CON
+        $this->thereIsFile(
+            'features/bootstrap/FeatureContext.php',
+            <<<CON
 <?php
 
 declare(strict_types=1);
@@ -100,7 +102,8 @@ class FeatureContext implements \Behat\Behat\Context\Context
 CON
         );
 
-        $this->thereIsFeatureFile(<<<FEA
+        $this->thereIsFeatureFile(
+            <<<FEA
 Feature: Passing feature
 
     Scenario: Passing scenario
@@ -114,7 +117,9 @@ FEA
      */
     public function thereIsFeatureFileWithFailingScenario(): void
     {
-        $this->thereIsFile('features/bootstrap/FeatureContext.php', <<<CON
+        $this->thereIsFile(
+            'features/bootstrap/FeatureContext.php',
+            <<<CON
 <?php
 
 declare(strict_types=1);
@@ -127,7 +132,8 @@ class FeatureContext implements \Behat\Behat\Context\Context
 CON
         );
 
-        $this->thereIsFeatureFile(<<<FEA
+        $this->thereIsFeatureFile(
+            <<<FEA
 Feature: Failing feature
 
     Scenario: Failing scenario
@@ -141,7 +147,9 @@ FEA
      */
     public function thereIsFeatureFileWithScenarioWithMissingStep(): void
     {
-        $this->thereIsFile('features/bootstrap/FeatureContext.php', <<<CON
+        $this->thereIsFile(
+            'features/bootstrap/FeatureContext.php',
+            <<<CON
 <?php
 
 declare(strict_types=1); 
@@ -150,7 +158,8 @@ class FeatureContext implements \Behat\Behat\Context\Context {}
 CON
         );
 
-        $this->thereIsFeatureFile(<<<FEA
+        $this->thereIsFeatureFile(
+            <<<FEA
 Feature: Feature with missing step
 
     Scenario: Scenario with missing step
@@ -164,7 +173,9 @@ FEA
      */
     public function thereIsFeatureFileWithScenarioWithPendingStep(): void
     {
-        $this->thereIsFile('features/bootstrap/FeatureContext.php', <<<CON
+        $this->thereIsFile(
+            'features/bootstrap/FeatureContext.php',
+            <<<CON
 <?php
 
 declare(strict_types=1);
@@ -177,7 +188,8 @@ class FeatureContext implements \Behat\Behat\Context\Context
 CON
         );
 
-        $this->thereIsFeatureFile(<<<FEA
+        $this->thereIsFeatureFile(
+            <<<FEA
 Feature: Feature with pending step
 
     Scenario: Scenario with pending step
