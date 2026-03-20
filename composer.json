@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "SyliusLabs\\SuiteTagsExtension\\": "src/"
+            "Sylius_Labs\\Suite_Tags_Extension\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\SyliusLabs\\SuiteTagsExtension\\": "tests/"
+            "Tests\\Sylius_Labs\\Suite_Tags_Extension\\": "tests/"
         }
     }
 }
